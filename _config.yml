@@ -1,3 +1,4 @@
 name: Peihong's Infinite Dimensional Space
 markdown: redcarpet
 pygments: true
+destination: _deploy
