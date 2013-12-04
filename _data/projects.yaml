@@ -1,0 +1,11 @@
+- name: Facial Performance Reconstruction
+  url: facerecon.html
+
+- name: ImageProcJS
+  url: imageprocjs.html
+
+- name: High Dimensional Data Visualization
+  url: hdvis.html
+
+- name: MineSweeper
+  url: minesweeper.html
