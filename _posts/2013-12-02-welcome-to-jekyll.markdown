@@ -1,24 +1,21 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-date:   2013-12-02 02:49:10
-categories: jekyll update
+title:  "First"
+date:   2013-12-04 03:59:00
+categories: test
 ---
 
-You'll find this post in your `_posts` directory - edit this post and re-build (or run with the `-w` switch) to see your changes!
-To add new posts, simply add a file in the `_posts` directory that follows the convention: YYYY-MM-DD-name-of-post.ext.
+All right, this is the VERY FIRST post! Let's try something out:
 
-Jekyll also offers powerful support for code snippets:
-
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
+Code snippet:
+{% highlight javascript %}
+var fac = function( n ) {
+    if( n === 1 ) return 1;
+    else return fac(n-1) * n;
+}
 {% endhighlight %}
 
-Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll's GitHub repo][jekyll-gh].
+Equation:
+$$E(\mathbf R, \mathbf t, \mathbf w) = \sum_{i=1}^N||\mathbf R\mathcal C\times\mathbf w^{(i)} + \mathbf t - \mathbf y^{(i)}||^2$$
 
-[jekyll-gh]: https://github.com/mojombo/jekyll
-[jekyll]:    http://jekyllrb.com
+That's it. The blog works like a charm!
