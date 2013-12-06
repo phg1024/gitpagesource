@@ -2,10 +2,14 @@
   url: facerecon.html
 
 - name: ImageProcJS
-  url: imageprocjs.html
+  url: imageprocjs/index.html
+
+- name: Ray tracer
+  url: raytracer/index.html
+
+- name: MineSweeper
+  url: minesweeper/index.html
 
 - name: High Dimensional Data Visualization
   url: hdvis.html
 
-- name: MineSweeper
-  url: minesweeper.html
