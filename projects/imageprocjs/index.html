@@ -132,8 +132,13 @@ layout: default
                 histtool.bindImage( I );
             });
 
+            $('#files').hide();
             $('#files').change( function( e ){
                 handleFileSelect(e, loader, canvas);
+            });
+            $('#upload_btn').click(function()
+            {
+                $('#files').click();
             });
 
             $('#sepia_btn').click(function(e) {
@@ -170,7 +175,7 @@ layout: default
     <div class="content">
         <h2>ImageProcJS - Image Processing with JavaScript</h2>
         <button id="show_btn">Show Remote Image</button>
-        Upload image:
+        <button id="upload_btn">Upload</button>
         <input type="file" id="files" name="files[]" />
         <output id="list"></output>
         <div>
