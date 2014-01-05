@@ -1,3 +1,14 @@
+---
+layout: post
+title:  "JavaScript Image Processing (2) - The Image Class"
+date:   2014-01-05 16:32:00
+uid: 4
+categories: JavaScript, Image Processing
+---
+
+Images plays a central role in the image processing webapps, and there is no doubt we need a good design of an image class to facilitate our processing tasks.
+
+{% highlight javascript %}
 function RGBAImage( w, h, data )
 {
 	this.type = 'RGBAImage';
@@ -137,11 +148,9 @@ RGBAImage.prototype.toImageData = function( ctx ) {
 
 /* render the image to the passed canvas */
 RGBAImage.prototype.render = function( cvs ) {
-	cvs.width = this.w;
-	cvs.height = this.h;
-	
-	var ctx = cvs.getContext('2d');
-	ctx.putImageData(this.toImageData(ctx), 0, 0);
+	canvas.width = this.w;
+	canvas.height = this.h;
+	context.putImageData(this.toImageData(context), 0, 0);
 };
 
 /* get RGBA image data from the passed image object */
@@ -164,3 +173,4 @@ RGBAImage.fromImage = function( img, cvs ) {
     ctx.clearRect(0, 0, w, h);
     return newImage;
 };
+{% endhighlight %}

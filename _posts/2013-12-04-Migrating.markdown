@@ -2,6 +2,7 @@
 layout: post
 title:  "Migrating to github.io"
 date:   2013-12-04 04:04:00
+uid: 2
 categories: test
 ---
 
