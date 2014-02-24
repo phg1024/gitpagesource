@@ -1,3 +1,3 @@
 #!/bin/bash
 jekyll build
-jekyll serve
+jekyll serve --watch

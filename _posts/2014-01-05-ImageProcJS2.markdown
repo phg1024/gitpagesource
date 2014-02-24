@@ -6,8 +6,10 @@ uid: 4
 categories: JavaScript, Image Processing
 ---
 
-Images plays a central role in the image processing webapps, and there is no doubt we need a good design of an image class to facilitate our processing tasks.
+The next essential thing we need for the image processing webapp is *the image class*. We need a handy class
+to facilitate all kinds of operations we are going to apply on the images.
 
+First and as always, the constructor. Nothing special, just specify the width and height, and maybe pass in the pixel map too.
 {% highlight javascript %}
 function RGBAImage( w, h, data )
 {
@@ -17,7 +19,11 @@ function RGBAImage( w, h, data )
     this.data = new Uint8Array(w*h*4);	
     data && this.data.set(data);	
 }
+{% endhighlight %}
 
+The most basic operation to alter an image is to do it pixel wise, and we need a way to access the pixels in the image.
+Here we go, the getter and setter.
+{% highlight javascript %}
 // get a pixel from the image
 RGBAImage.prototype.getPixel = function(x, y) {
     var idx = (y * this.w + x) * 4;
@@ -29,28 +35,6 @@ RGBAImage.prototype.getPixel = function(x, y) {
     );
 };
 
-// bilinear sample of the image
-RGBAImage.prototype.sample = function(x, y) {
-    var w = this.w, h = this.h;
-    var ty = Math.floor(y);
-    var dy = Math.ceil(y);
-
-    var lx = Math.floor(x);
-    var rx = Math.ceil(x);
-
-    var fx = x - lx;
-    var fy = y - ty;
-
-    var c = this.getPixel(lx, ty).mul((1-fy) * (1-fx))
-        .add(this.getPixel(lx, dy).mul(fy * (1-fx)))
-        .add(this.getPixel(rx, ty).mul((1-fy) * fx))
-        .add(this.getPixel(rx, dy).mul(fy * fx));
-
-    c.clamp();
-
-    return c;
-};
-
 // set a pixel value in the image
 RGBAImage.prototype.setPixel = function(x, y, c) {
     var idx = (y * this.w + x) * 4;
@@ -59,9 +43,50 @@ RGBAImage.prototype.setPixel = function(x, y, c) {
     this.data[idx+2] = c.b;
     this.data[idx+3] = c.a;
 };
+{% endhighlight %}
 
-// utility function
-// per-pixel operation
+For many operations, accessing single pixel does not meet our requirement. We probably need to go to sub-pixel level.
+Bilinear sampling allows us to obtain image data on subpixel level. Suppose we need to get the color information at position
+$(x, y)$, where $x$ and $y$ are floating point numbers. We are not going to hit exactly on a single pixel, but somewhere among
+4 adjacent pixels. Apparently the color we get should be a combination of the 4 neighboring pixels, and the color should be
+determined by the spatial relationship between the position and the 4 pixels. The closer the position is to a pixel, the closer should
+the color be to that pixel. This can be achieved with bilinear sampling - linearly interpolating the pixel value in both $x$ and $y$
+directions. Suppose the 4 neighbor pixels are $(x0, y0)$, $(x1, y0)$, $(x0, y1)$ and $(x1, y1)$ (where$x1=x0+1,y1=y0+1$), the color at $(x, y)$ is given by:
+$$c(x,y) = (1-r)(1-t)\times c(x0,y0) + r(1-t)\times c(x1,y0) + (1-r)t\times c(x0,y1) + rt\times c(x1,y1)$$
+Here $r$ and $t$ are interpolation weights given by:
+$$r = x - x0$$
+and
+$$t = y - y0$$
+
+
+{% highlight javascript %}
+// bilinear sample of the image
+RGBAImage.prototype.sample = function(x, y) {
+    var w = this.w, h = this.h;
+    var y0 = Math.floor(y);
+    var y1 = Math.ceil(y);
+
+    var x0 = Math.floor(x);
+    var x1 = Math.ceil(x);
+
+    var fx = x - x0;
+    var fy = y - y0;
+
+    var c = this.getPixel(x0, y0).mul((1-fy) * (1-fx))
+        .add(this.getPixel(x0, y1).mul(fy * (1-fx)))
+        .add(this.getPixel(x1, y0).mul((1-fy) * fx))
+        .add(this.getPixel(x1, y1).mul(fy * fx));
+
+    c.clamp();
+
+    return c;
+};
+{% endhighlight %}
+
+With the functions we have so far, we are ready to perform per-pixel operation with the following functions. The first
+one, *apply*, alters every single pixel in the image and stores the result back to the source image. The operation is
+unspecified - it is passed in as an argument which produce a new color given an input color.
+{% highlight javascript %}
 RGBAImage.prototype.apply = function( f ) {
     for(var y=0;y<this.h;y++) {
         for(var x=0;x<this.w;x++) {
@@ -70,9 +95,11 @@ RGBAImage.prototype.apply = function( f ) {
     }
     return this;
 };
+{% endhighlight %}
 
-// utility function
-// per-pixel operation
+The *map* function is very similar except the result is stored in a new image. It is also optimized a little bit to improve
+performance.
+{% highlight javascript %}
 RGBAImage.prototype.map = function( f ) {
     var w = this.w, h = this.h;
     var dst = new RGBAImage(w, h);
@@ -90,7 +117,10 @@ RGBAImage.prototype.map = function( f ) {
 	}
 	return dst;
 };
+{% endhighlight %}
 
+Other utility functions are the resizing function and rendering related functions.
+{% highlight javascript %}
 // utility function
 // resize image
 RGBAImage.prototype.resize = function(w, h) {
@@ -124,7 +154,9 @@ RGBAImage.prototype.resize_longedge = function( L ) {
     }
     else return this;
 };
+{% endhighlight %}
 
+{% highlight javascript %}
 // for web-gl
 RGBAImage.prototype.uploadTexture = function( ctx, texId )
 {
