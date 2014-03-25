@@ -37,16 +37,17 @@ function run()
 {
     // construct scene
     var scene = new Scene();
-    scene.addObject(new Sphere(new Point3(1.0, 1.0, 2.0), 1.0, Color.BLUE, {Ka:0.1, Kd:0.6, Ks:0.3, fr: 0.25}));
-    scene.addObject(new Sphere(new Point3(-2.0, 2.0, 3.0), 1.5, Color.YELLOW, {Ka:0.1, Kd:0.6, Ks:0.3, fr: 0.15}));
-    scene.addObject(new Sphere(new Point3(2.0, 4.0, 8.0), 4.0, Color.RED, {Ka:0.1, Kd:0.6, Ks:0.3, fr: 0.1}));
-    scene.addObject(new Sphere(new Point3(-4.0, 4.0, 6.0), 2.0, Color.GREEN, {Ka:0.1, Kd:0.6, Ks:0.3, fr: 0.25}));
-    scene.addObject(new Sphere(new Point3(0, -1e6, 0), 1e6, Color.GRAY, {Ka:0.1, Kd:0.3, Ks:0.1, fr: 0.25}));
+    scene.addObject(new Sphere(new Point3(1.0, 2.0, 2.0), 2.0, Color.LIGHTGREEN, {Ka:0.1, Kd:0.6, Ks:0.3, ior: 3.5, refractive: true}));
+    scene.addObject(new Sphere(new Point3(-2.0, 2.0, 3.0), 1.5, Color.DARKYELLOW, {Ka:0.1, Kd:0.6, Ks:0.3, ior: 0.15}));
+    scene.addObject(new Sphere(new Point3(2.0, 4.0, 8.0), 4.0, Color.LIGHTRED, {Ka:0.1, Kd:0.6, Ks:0.3, ior: 0.1}));
+    scene.addObject(new Sphere(new Point3(-4.0, 4.0, 6.0), 2.0, Color.LIGHTBLUE, {Ka:0.1, Kd:0.6, Ks:0.3, ior: 0.75}));
+    scene.addObject(new Sphere(new Point3(0, -1e6, 0), 1e6, Color.GRAY, {Ka:0.1, Kd:0.3, Ks:0.1, ior: 0.25}));
 
     //scene.addObject(new Mesh('cube.obj'));
 
     scene.addLight( {
             pos: new Point3(-40.0, 80.0, -40.0),
+            radius: 20.0,
             ambient: new Color(10, 10, 10, 255),
             diffuse: Color.WHITE,
             specular: Color.WHITE,
