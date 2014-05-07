@@ -3,7 +3,7 @@ layout: post
 title:  "JavaScript Image Processing (1) - Getting Started"
 date:   2014-01-04 23:45:00
 uid: 3
-categories: JavaScript, Image Processing
+categories: Image Processing
 ---
 
 Intro

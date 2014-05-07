@@ -1,0 +1,57 @@
+---
+layout: default
+---
+
+<link rel='stylesheet' type='text/css' href='../projects.css' media="screen, print, projection">
+<link rel='stylesheet' type='text/css' href='./css/style.css' media="screen, print, projection">
+
+<!-- External libraries -->
+<script type="text/javascript" src="lib/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="lib/d3.v3.min.js"></script>
+<script type="text/javascript" src="lib/require.js"></script>
+
+<!-- Peihong's library -->
+<script type="text/javascript" src="algorithms.js"></script>
+<script type="text/javascript" src="benchmark.js"></script>
+<script type="text/javascript" src="colorutils.js"></script>
+<script type="text/javascript" src="color.js"></script>
+<script type="text/javascript" src="image.js"></script>
+<script type="text/javascript" src="filter.js"></script>
+<script type="text/javascript" src="effects.js"></script>
+<script type="text/javascript" src="curve.js"></script>
+<script type="text/javascript" src="tools/curvetool.js"></script>
+<script type="text/javascript" src="tools/histogramtool.js"></script>
+<script type="text/javascript" src="imageloader.js"></script>
+<script type="text/javascript" src="utils.js"></script>
+
+<script>
+    var context, canvas;
+    var loader;
+
+    $(document).on('imageloaded', function() {
+        var I = loader.result;
+        I.render(canvas);
+    });
+
+    function loadAndDisplay() {
+        loader = new ImageLoader(800);  // 800 is maximum allowed resolution of the long edge
+        loader.loadImage('bunnies.png', canvas);
+    }
+    window.onload = function() {
+        // get the handle for canvas and context
+        canvas = document.getElementById('cvs');
+        context = canvas.getContext('2d');
+
+        loadAndDisplay();
+    }
+</script>
+<div class="content">
+    <h2>ImageProcJS Demo - Loading and Displaying Image</h2>
+    <div align="center">
+        <canvas id="cvs"></canvas>
+        <div>
+        The image is loaded with <a href="imageloader.js">a simple loader</a> and displayed with <a href="image.js">the image class</a>
+        in ImageProcJS.
+        </div>
+    </div>
+</div>

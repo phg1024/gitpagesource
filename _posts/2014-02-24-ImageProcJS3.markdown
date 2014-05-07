@@ -3,7 +3,7 @@ layout: post
 title:  "JavaScript Image Processing (3) - Brightness/Contrast Adjustment"
 date:   2014-02-24 11:29:00
 uid: 5
-categories: JavaScript, Image Processing
+categories: Image Processing
 ---
 
 With the image class we created in previous posts, we are finally ready to have some fun with *image processing*.
@@ -17,11 +17,11 @@ Simple as it is, we can still do something to make our images more appealing. Sa
 <div align="center">
 <table>
 <tr>
-<td><img src="/images/underconstruction.jpg"></td>
-<td><img src="/images/underconstruction.jpg"></td>
+<td><img class="post exampleimg" src="/projects/imageprocjs/seal.jpg"></td>
+<td><img class="post exampleimg" src="/projects/imageprocjs/images/brightness55.png"></td>
 </tr>
 <tr>
-<td>Source Image</td><td>Brightness Adjusted Image</td>
+<td>Source Image</td><td>Brightness Adjusted (+55) Image</td>
 </tr>
 </table>
 </div>
@@ -72,11 +72,11 @@ var filters = {
 <div align="center">
 <table>
 <tr>
-<td><img src="/images/underconstruction.jpg"></td>
-<td><img src="/images/underconstruction.jpg"></td>
+<td><img class="post exampleimg" src="/projects/imageprocjs/seal.jpg"></td>
+<td><img class="post exampleimg" src="/projects/imageprocjs/images/contrast55.png"></td>
 </tr>
 <tr>
-<td>Source Image</td><td>Contrast Adjusted Image</td>
+<td>Source Image</td><td>Contrast Adjusted (+55) Image</td>
 </tr>
 </table>
 </div>
@@ -103,11 +103,11 @@ var filters = {
 <div align="center">
 <table>
 <tr>
-<td><img src="/images/underconstruction.jpg"></td>
-<td><img src="/images/underconstruction.jpg"></td>
+<td><img class="post exampleimg" src="/projects/imageprocjs/seal.jpg"></td>
+<td><img class="post exampleimg" src="/projects/imageprocjs/images/bc55.png"></td>
 </tr>
 <tr>
-<td>Source Image</td><td>Brightness and Contrast Adjusted Image</td>
+<td>Source Image</td><td>Brightness (+55) and Contrast (+55) Adjusted Image</td>
 </tr>
 </table>
 </div>

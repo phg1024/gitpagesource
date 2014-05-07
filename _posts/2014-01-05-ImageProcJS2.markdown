@@ -3,7 +3,7 @@ layout: post
 title:  "JavaScript Image Processing (2) - The Image Class"
 date:   2014-01-05 16:32:00
 uid: 4
-categories: JavaScript, Image Processing
+categories: Image Processing
 ---
 
 The next essential thing we need for the image processing webapp is *the image class*. We need a handy class
@@ -206,3 +206,7 @@ RGBAImage.fromImage = function( img, cvs ) {
     return newImage;
 };
 {% endhighlight %}
+
+With the image class established, we can now create [a simple webpage]
+                                                    ({{site.url}}/projects/ImageProcJS/demo_showimage.html) that loads an image from the server and displays
+it.
