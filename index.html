@@ -4,7 +4,27 @@ title: Peihong's Infinite Dimensional Space
 ---
 
 <div class="content">
-  <h2>Projects</h2>
+  <h2>Research</h2>
+    <ul class="projects">
+        {% for project in site.data.researchprojs %}
+        <li>
+            <a href="projects/{{ project.url }}">
+                {{ project.name }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+  <h2>Course Projects</h2>
+    <ul class="projects">
+        {% for project in site.data.courseprojs %}
+        <li>
+            <a href="{{ project.url }}">
+                {{ project.name }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+  <h2>Personal Projects</h2>
     <ul class="projects">
         {% for project in site.data.projects %}
         <li>

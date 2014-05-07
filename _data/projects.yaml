@@ -1,14 +1,8 @@
-- name: Facial Performance Reconstruction
-  url: facerecon.html
-
 - name: ImageProcJS
   url: imageprocjs/index.html
 
 - name: Ray tracer
   url: raytracer/index.html
-
-- name: High Dimensional Data Visualization
-  url: hdvis.html
 
 - name: Fractal
   url: fractal/index.html

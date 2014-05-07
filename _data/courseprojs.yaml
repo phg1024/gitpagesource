@@ -1,0 +1,14 @@
+- name: Image Synthesis
+  url: ./CSCE647/index.html
+
+- name: Digital Image
+  url: ./CSCE646/index.html
+
+- name: Physically Based Modeling
+  url: ./CSCE649/index.html
+
+- name: Geometric Modeling
+  url: ./CSCE645/index.html
+
+- name: Computer Graphics
+  url: ./CSCE641/index.html
