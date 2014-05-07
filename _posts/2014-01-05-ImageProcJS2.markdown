@@ -208,5 +208,5 @@ RGBAImage.fromImage = function( img, cvs ) {
 {% endhighlight %}
 
 With the image class established, we can now create [a simple webpage]
-                                                    ({{site.url}}/projects/ImageProcJS/demo_showimage.html) that loads an image from the server and displays
+                                                    ({{site.url}}/projects/imageprocjs/demo_showimage.html) that loads an image from the server and displays
 it.
