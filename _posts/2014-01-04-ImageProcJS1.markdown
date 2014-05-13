@@ -167,5 +167,5 @@ Color.GRAY = new Color(128, 128, 128, 255);
 {% endhighlight %}
 
 What's next? The image class! We'll get to that in the [next post]
-(../05/ImageProcJS2.html).
+({% post_url 2014-01-05-ImageProcJS2 %}).
 
