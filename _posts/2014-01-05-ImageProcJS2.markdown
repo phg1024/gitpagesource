@@ -51,12 +51,12 @@ $(x, y)$, where $x$ and $y$ are floating point numbers. We are not going to hit 
 4 adjacent pixels. Apparently the color we get should be a combination of the 4 neighboring pixels, and the color should be
 determined by the spatial relationship between the position and the 4 pixels. The closer the position is to a pixel, the closer should
 the color be to that pixel. This can be achieved with bilinear sampling - linearly interpolating the pixel value in both $x$ and $y$
-directions. Suppose the 4 neighbor pixels are $(x0, y0)$, $(x1, y0)$, $(x0, y1)$ and $(x1, y1)$ (where$x1=x0+1,y1=y0+1$), the color at $(x, y)$ is given by:
-$$c(x,y) = (1-r)(1-t)\times c(x0,y0) + r(1-t)\times c(x1,y0) + (1-r)t\times c(x0,y1) + rt\times c(x1,y1)$$
+directions. Suppose the 4 neighbor pixels are $(x\_0, y\_0)$, $(x\_1, y\_0)$, $(x\_0, y\_1)$ and $(x\_1, y\_1)$ (where$x\_1=x\_0+1,y\_1=y\_0+1$), the color at $(x, y)$ is given by:
+$$c(x,y) = (1-r)(1-t)\times c(x\_0,y\_0) + r(1-t)\times c(x\_1,y\_0) + (1-r)t\times c(x\_0,y\_1) + rt\times c(x\_1,y\_1)$$
 Here $r$ and $t$ are interpolation weights given by:
-$$r = x - x0$$
+$$r = x - x\_0$$
 and
-$$t = y - y0$$
+$$t = y - y\_0$$
 
 
 {% highlight javascript %}

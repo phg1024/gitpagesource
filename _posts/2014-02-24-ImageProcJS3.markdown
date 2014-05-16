@@ -10,7 +10,7 @@ With the image class we created in previous posts, we are finally ready to have 
 As a first step, let's try something simple.
 
 Something simple huh? What can be simpler than linear transformation? I guess that's what we are targeting here:
-$$c1 = \alpha \times c0 + \beta$$
+$$c\_1 = \alpha \times c\_0 + \beta$$
 Simple as it is, we can still do something to make our images more appealing. Say we have somehow miscalculate the light
  and take a dark picture. A quick fix to it would be adjust the brightness of the image.
 
@@ -51,7 +51,8 @@ var filters = {
 
 The contrast filter shares a similar idea, while the difference is, in terms of the linear transformation equation,
 $\alpha\ne1$ and $\beta=0$. It is in fact a scaling of the pixel values. To set a boundary of the scaling, we take an input
-of contrast amount $C$ ranging from -128 to 128 and compute $\beta$ with this value $$\beta = \max(\frac{128+C}{128}, 0)$$
+of contrast amount $C$ ranging from -128 to 128 and compute $\beta$ with this value
+$$\beta = \max\left(\frac{128+C}{128}, 0\right)$$
 {% highlight javascript %}
 var filters = {
     'contrast' : function( src, val ) {
