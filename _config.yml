@@ -1,5 +1,5 @@
 name: Peihong's Infinite Dimensional Space
 markdown: redcarpet
 highlighter: rouge
-destination: _deploy
+destination: ../githubpage
 url: http://phg1024.github.io
