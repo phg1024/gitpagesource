@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<link rel='stylesheet' type='text/css' href='../projects.css' media="screen, print, projection">
+<link rel='stylesheet' type='text/css' href='./css/style.css' media="screen, print, projection">
+
+<!-- External libraries -->
+<script type="text/javascript" src="lib/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="lib/d3.v3.min.js"></script>
+<script type="text/javascript" src="lib/require.js"></script>
+
+<div class="content">
+  <h2>CVjs - Computer Vision with JavaScript</h2>
+  <button id="show_btn">Show Remote Image</button>
+  <button id="upload_btn">Upload</button>
+  <input type="file" id="files" name="files[]" />
+  <output id="list"></output>
+  <div>
+    <table>
+      <tr>
+        <td><button id="hs_btn">Harris Corner Detector</button></td>
+      </tr>
+    </table>
+  </div>
+  <p id='imageinfo'></p>
+  <div>
+    <div id='div_canvas'>
+      <canvas id="cvs"></canvas>
+    </div>
+  </div>
+</div>
