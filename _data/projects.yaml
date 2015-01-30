@@ -1,8 +1,8 @@
 - name: ImageProcJS
   url: imageprocjs/index.html
 
-- name: CVjs
-  url: cvjs/index.html
+#- name: CVjs
+#  url: cvjs/index.html
 
 - name: Ray tracer
   url: raytracer/index.html

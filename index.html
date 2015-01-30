@@ -4,7 +4,7 @@ title: Peihong's Infinite Dimensional Space
 ---
 
 <div class="content">
-  <h2>Research</h2>
+  <h3>Research</h3>
     <ul class="projects">
         {% for project in site.data.researchprojs %}
         <li>
@@ -14,7 +14,7 @@ title: Peihong's Infinite Dimensional Space
         </li>
         {% endfor %}
     </ul>
-  <h2>Course Projects</h2>
+  <h3>Course Projects</h3>
     <ul class="projects">
         {% for project in site.data.courseprojs %}
         <li>
@@ -24,7 +24,7 @@ title: Peihong's Infinite Dimensional Space
         </li>
         {% endfor %}
     </ul>
-  <h2>Personal Projects</h2>
+  <h3>Personal Projects</h3>
     <ul class="projects">
         {% for project in site.data.projects %}
         <li>
@@ -34,7 +34,7 @@ title: Peihong's Infinite Dimensional Space
         </li>
         {% endfor %}
     </ul>
-  <h2>Blog Posts</h2>
+  <h3>Blog Posts</h3>
   <ul class="posts">
     {% for post in site.posts %}
       <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
