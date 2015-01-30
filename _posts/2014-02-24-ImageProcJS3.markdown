@@ -21,7 +21,7 @@ Simple as it is, we can still do something to make our images more appealing. Sa
 <td><img class="post exampleimg" src="/projects/imageprocjs/images/brightness55.png"></td>
 </tr>
 <tr>
-<td>Source Image</td><td>Brightness Adjusted (+55) Image</td>
+<td class="post caption">Source Image</td><td class="post caption">Brightness Adjusted (+55) Image</td>
 </tr>
 </table>
 </div>
@@ -77,7 +77,7 @@ var filters = {
 <td><img class="post exampleimg" src="/projects/imageprocjs/images/contrast55.png"></td>
 </tr>
 <tr>
-<td>Source Image</td><td>Contrast Adjusted (+55) Image</td>
+<td class="post caption">Source Image</td><td class="post caption">Contrast Adjusted (+55) Image</td>
 </tr>
 </table>
 </div>
@@ -108,7 +108,7 @@ var filters = {
 <td><img class="post exampleimg" src="/projects/imageprocjs/images/bc55.png"></td>
 </tr>
 <tr>
-<td>Source Image</td><td>Brightness (+55) and Contrast (+55) Adjusted Image</td>
+<td class="post caption">Source Image</td><td class="post caption">Brightness (+55) and Contrast (+55) Adjusted Image</td>
 </tr>
 </table>
 </div>

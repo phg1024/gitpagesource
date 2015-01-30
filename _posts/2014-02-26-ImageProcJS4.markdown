@@ -57,7 +57,7 @@ var filters = {
 <td><img class="post exampleimg" src="/projects/imageprocjs/images/grayscale.png"></td>
 </tr>
 <tr>
-<td>Source Image</td><td>Converted Grayscale Image</td>
+<td class="post caption">Source Image</td><td class="post caption">Converted Grayscale Image</td>
 </tr>
 </table>
 </div>
@@ -88,7 +88,7 @@ function histogram(img, x1, y1, x2, y2, num_bins) {
 <div id="histimg" align="center">
 <table>
 <tr><td><img class="post exampleimg" src="/projects/imageprocjs/images/hist0.png"></td></tr>
-<tr><td>Seal and its histogram</td></tr>
+<tr><td class="post caption">Seal and its histogram</td></tr>
 </table>
 </div>
 
@@ -118,8 +118,9 @@ Now that we have the histogram built and displayed, what then? What can all thes
 <div align="center">
 <table>
 <tr><td><img class="post exampleimg" src="/projects/imageprocjs/images/histL0.png"></td></tr>
-<tr><td>Badly Exposed Image</td></tr>
+<tr><td class="post caption">Badly Exposed Image</td></tr>
 </table>
+</div>
 
 Not cool. Everything just look so washed. We've got to do something to rescue it.
 
@@ -136,8 +137,9 @@ $$c(p') = c(p) = 255\cdot p'$$
 $c(p') = c(p)$ because the ratio of pixels smaller or equal than $p'$ in the new image is exactly the same as the ratio of pixels smaller or equal than $p$ in the original image.
 
 A linear relation! We've got an even distribution of pixel values! Well, not exactly even distribution due to the discrete nature of the pixel values, but it is close enough to even distribution. The image below verifies this.
+<div align="center">
 <table>
 <tr><td><img class="post exampleimg" src="/projects/imageprocjs/images/histL1.png"></td></tr>
-<tr><td>Histogram Equalized Image</td></tr>
+<tr><td class="post caption">Histogram Equalized Image</td></tr>
 </table>
 </div>
